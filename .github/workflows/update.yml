@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Update PortFolio:
+  update_portFolio:
     runs-on: ubuntu-latest
 
     steps:
