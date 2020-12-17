@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger "Deploy" workflow in "Portfolio" repository
+        run: |
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://github.com/pd-escher/portfolio/ \
+          -d '{"event_type":"update_blogs"}'
