@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Update PortFolio:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,5 @@ jobs:
           curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
-          https://github.com/pd-escher/portfolio/ \
+          https://api.github.com/pd-escher/portfolio/ \
           -d '{"event_type":"update_blogs"}'
